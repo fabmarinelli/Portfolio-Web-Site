@@ -1,0 +1,802 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* NAV BAR */
+
+nav{
+    height: 80px;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+}
+
+nav .logo{
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+nav .logo .surname{
+    color: red;
+    padding-left: 5px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li{
+    margin: 0 5px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s all ease;
+    padding: 8px 10px;
+}
+
+nav ul li a:hover{
+    background: red;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav ul li a:active{
+    background: black;
+    border: 2px solid red;
+    cursor: pointer;
+}
+
+nav .menu-btn{
+    color: white;
+    font-size: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+#close-icon{
+    display: none;
+}
+
+#click{
+    display: none;
+}
+
+@media(max-width: 750px){
+
+    nav .menu-btn{
+        display: block;
+    }
+
+    nav ul{
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        background: rgb(22, 22, 22);
+        height: 100vh;
+        width: 100%;
+        display: block;
+        text-align: center;
+        transition: 0.3s all ease;
+        z-index: 100;
+    }
+
+    
+    #click:checked ~ ul{
+        right: 0;
+    }
+
+    
+    #click:checked ~ .menu-btn #menu-icon{
+        display: none;
+    }
+
+    #click:checked ~ .menu-btn #close-icon{
+        display: block;
+    }
+
+    nav ul li{
+        margin: 40px 0;
+        display: block;
+    }
+
+    nav ul li a{
+        font-size: 20px;
+    }
+
+    #click:checked ~ ul ~ .content {
+        display: none;
+    }
+}
+
+/* BODY HOME */
+
+.content {
+    background-image: url('/assets/img/sfondo.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    background-repeat: none;
+    padding-top: 150px;   
+    padding-left: 80px;
+}
+
+.welcoming {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.name {
+    color: white;
+    font-size: 70px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.surname2 {
+    color: red;
+    padding-left: 15px;
+}
+
+.skills {
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 50px;
+}
+
+.input-container {
+    background: white;
+    padding: 15px;
+    border-radius: 50px;
+    width: 40%;
+    min-width: 300px;
+    height: 50px;
+    border: 3px solid red;
+    overflow: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.email {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+}
+
+.submit {
+    border: none;
+    background: red;
+    padding: 5px 30px;
+    border-radius: 50px;
+    color: white;
+    font-size: 16px;
+    box-shadow: 0px 0px 5px #000, 0px 0px 15px #858585;
+    right: 5px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background: #e00606;
+    transform: scale(1.05);
+}
+
+.submit:active{
+    background: black;
+    border: 2px solid red;
+}
+
+/* BODY CHI SONO */
+
+.content3 {
+    background: rgb(16, 16, 16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 400px;
+    padding: 50px;
+    height: 100vh;
+}
+
+.img-data {
+    width: 500px;
+    height: 500px;
+    background-size: cover;
+    border-radius: 8px;
+}
+
+.about {
+    font-size: 70px;
+    padding-bottom: 15px;
+    color: white;
+}
+
+.subtitle {
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+    padding-bottom: 15px;
+}
+
+.sub2 {
+    color: red;
+}
+
+.more-info {
+    color: white;
+    padding-bottom: 40px;
+}
+
+.talk {
+    border: none;
+    background: red;
+    color: white;
+    border-radius: 30px;
+    width: 100px;
+    height: 40px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.talk:hover {
+    background: black;
+    border: 2px solid red;
+    color: white;
+}
+
+@media(max-width: 950px) {
+    .content3{
+        padding: 30px 20px;
+        height: 100vh;
+    }
+
+    .img-data{
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .about {
+        font-size: 40px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .more-info {
+        font-size: 14px;
+        padding-bottom: 30px;
+    }
+
+    .talk {
+        width: 120px;
+        height: 45px;
+    }
+}
+
+@media(max-width: 800px){
+    .content3{
+        height: 850px;
+    }
+
+    .img-data{
+        height: 400px;
+        width: 400px;
+    }
+
+    .container-fluid{
+        margin-top: 10px;
+    }
+}
+
+/* BODY SERVIZI */
+
+.content4 {
+    background: rgb(16, 16, 16); 
+    width: 100%;
+    height: 100vh;
+}
+
+.services {
+    color: white;
+    font-size: 60px;
+    padding-top: 45px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card-container {
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 400px;
+    flex-wrap: wrap;
+}
+
+.card1 {
+    background: rgb(37, 37, 37);
+    width: 300px;
+    height: 320px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+}
+
+.fa-database {
+    font-size: 45px;
+    color: red;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card1-title {
+    color: white;
+    padding-bottom: 10px;
+}
+
+.card1-p {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.card1-button {
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    background: red;
+    color: white;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card1-button:hover {
+    background: rgb(37, 37, 37);
+    border: 2px solid red;
+}
+
+.fa-code {
+    font-size: 45px;
+    color: red;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.fa-marker {
+    font-size: 45px;
+    color: red;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media(max-width: 1000px){
+    .content4{
+        height: 1000px;
+        background: rgb(16, 16, 16);
+        width: 100%;
+    }
+}
+
+@media(max-width: 750px){
+    .content4{
+        height: 1500px;
+        background: rgb(16, 16, 16);
+        width: 100%;
+    }
+}
+
+/* BODY CONTATTI */
+
+.contatti{
+    background: rgb(16, 16, 16);
+    width: 100%;
+    height: 150vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title{
+    color: white;
+    font-size: 48px;
+    font-weight: 600;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.form-box{
+    background: rgb(37, 37, 37);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    height: 500px;
+    border-radius: 5px;
+}
+
+.form-title{
+    color: white;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+.contact-name{
+    border: none;
+    margin-bottom: 20px;
+    min-width: 580px;
+    height: 40px;
+    padding-left: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-email{
+    border: none;
+    margin-bottom: 20px;
+    width: 580px;
+    height: 40px;
+    padding-left: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-message{
+    border: none;
+    margin-bottom: 20px;
+    width: 580px;
+    height: 200px;
+    padding-left: 10px;
+    border-radius: 5px;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+button{
+    padding: 8px 10px;
+    border-radius: 20px;
+    width: 580px;
+    border: none;
+    background: red;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+button:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+button:active{
+    background: rgb(37, 37, 37);
+    border: 2px solid red;
+}
+
+@media(max-width: 900px){
+    .contact-name{
+        border: none;
+        margin-bottom: 20px;
+        min-width: 300px;
+        height: 40px;
+        padding-left: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .contact-email{
+        border: none;
+        margin-bottom: 20px;
+        width: 300px;
+        height: 40px;
+        padding-left: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .contact-message{
+        border: none;
+        margin-bottom: 20px;
+        width: 300px;
+        height: 200px;
+        padding-left: 10px;
+        border-radius: 5px;
+        padding-top: 10px;
+        font-size: 16px;
+    }
+
+    button{
+        padding: 8px 10px;
+        border-radius: 20px;
+        width: 300px;
+        border: none;
+        background: red;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 10px;
+    }
+}
+
+.contacts {
+    color: white;
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.icons {
+    width: 25%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social {
+    color: white;
+    background: red;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-envelope{
+    font-size: 24px;
+}
+
+.fa-linkedin-in {
+    font-size: 24px;
+}
+
+.fa-instagram {
+    font-size: 26px;
+}
+
+.icons i:hover {
+    background: white;
+    color: red;
+}
+
+.social:hover{
+    background: white;
+}
+
+
+.icons i{
+    cursor: pointer;
+}
+
+.copyright {
+    color: red;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+/* CV BODY */
+
+.content6{
+    background: rgb(16, 16, 16);
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+    padding: 70px 0; 
+}
+
+.container{
+    margin: 0 auto; 
+    max-width: 1200px; 
+    width: 90%; 
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(31, 31, 31);
+    border-radius: 10px;
+}
+
+.curriculum{
+    padding-top: 10px; 
+    font-size: clamp(32px, 5vw, 48px); 
+    text-align: center; 
+}
+
+.intestazione{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+    width: 100%; 
+}
+
+.name2{
+    color: white;
+    background: rgb(16, 16, 16);
+    padding: 12px 30px; 
+    border-radius: 8px;
+    border: 2px solid red;
+    width: 100%; 
+    max-width: 600px; 
+    text-align: center;
+    font-size: clamp(20px, 4vw, 28px); 
+}
+
+.skills2{
+    margin-top: 25px;
+    background: rgb(16, 16, 16);
+    padding: 12px 30px; 
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px; 
+    text-align: center; 
+    font-size: clamp(14px, 3vw, 16px); 
+}
+
+.presentazione{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 45px;
+    width: 100%; 
+}
+
+.title6{
+    margin-bottom: 30px;
+    color: white;
+    background: rgb(16, 16, 16);
+    padding: 12px 30px;
+    border-radius: 8px;
+    border: 2px solid red;
+    width: 100%; 
+    max-width: 600px;
+    text-align: center; 
+    font-size: clamp(18px, 3.5vw, 24px); 
+}
+
+.pres6{
+    width: 100%; 
+    max-width: 900px; 
+    background: rgb(16, 16, 16);
+    padding: 20px; 
+    border-radius: 12px;
+    margin-bottom: 30px;
+    line-height: 1.6; 
+    font-size: clamp(14px, 2.5vw, 16px); 
+}
+
+.master{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.master2{
+    margin-top: 10px;
+    background: rgb(16, 16, 16);
+    padding: 12px 30px; 
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 2px solid white;
+    width: 100%; 
+    max-width: 600px; 
+    text-align: center; 
+    font-size: clamp(16px, 3vw, 20px); 
+}
+
+.laurea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; 
+}
+
+.laurea2{
+    margin-top: 10px;
+    background: rgb(16, 16, 16);
+    padding: 12px 30px; 
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 2px solid white;
+    width: 100%; 
+    max-width: 600px; 
+    text-align: center; 
+    font-size: clamp(16px, 3vw, 20px); 
+}
+
+.pres7{
+    width: 100%; 
+    max-width: 900px; 
+    background: rgb(16, 16, 16);
+    padding: 12px 20px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: clamp(14px, 2.5vw, 16px); 
+}
+
+.lavoro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; 
+}
+
+.pres8{
+    width: 100%; 
+    max-width: 900px; 
+    background: rgb(16, 16, 16);
+    padding: 12px 20px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 2px solid white;
+    font-size: clamp(14px, 2.5vw, 16px); 
+}
+
+.pres6 ul {
+    padding-left: 20px;
+}
+
+.pres6 ul li {
+    margin-bottom: 8px;
+}
+
+@media(max-width: 768px){
+    .container{
+        width: 95%; 
+        padding: 20px 15px;
+    }
+    
+    nav .logo{
+        font-size: 20px; 
+    }
+}
+
+@media(max-width: 480px){
+    .curriculum{
+        padding-top: 5px;
+    }
+    
+    .intestazione{
+        margin-top: 30px;
+    }
+    
+    .presentazione{
+        margin-top: 30px;
+    }
+    
+    .name2, .skills2, .title6, .master2, .laurea2{
+        padding: 10px 20px;
+    }
+}
